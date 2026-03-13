@@ -28,7 +28,7 @@ jobs:
             --arg date "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
             --arg net_apy "$NET_APY" \
             --arg gross_apy "$GROSS_APY" \
-            '{date: $date, net_apy: ($net_apy | tonumber), gross_apy: ($brut | tonumber)}')
+            '{date: $date, net_apy: ($net_apy | tonumber), gross_apy: ($gross_apy | tonumber)}')
 
           # 3. Initialisation du fichier si inexistant
           if [ ! -f data.json ]; then echo "[]" > data.json; fi
