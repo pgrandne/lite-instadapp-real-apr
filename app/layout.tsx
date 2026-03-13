@@ -16,9 +16,9 @@ const fontMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Instadapp Real APY",
+  title: "Fluid Real APY",
   description:
-    "Comparison between Instadapp displayed APY and real APY calculated on distributed interest",
+    "Comparison between Fluid displayed APY and real APY calculated on distributed interest",
 };
 
 export default function RootLayout({
