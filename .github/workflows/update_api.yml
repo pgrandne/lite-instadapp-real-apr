@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-  - name: Fetch and Append Data
+      - name: Fetch and Append Data
         run: |
           # 1. On récupère la réponse complète
           FULL_RES=$(curl -s "https://api.instadapp.io/v2/mainnet/lite/users/0x56e001745f105e34afe45398d7bc366db8fc5792/vaults")
