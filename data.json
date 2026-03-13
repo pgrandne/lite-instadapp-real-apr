@@ -1,1 +1,147 @@
-[{"version":"2","vault":"0xA0D3707c569ff8C87FA923d3823eC5D81c98Be78","ethWrapperContract":"0x64338FD8e7b1918B4a806A175e26eD152B3d0b7b","tokenAddress":"0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE","token":{"address":"0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE","name":"ETH","symbol":"ETH","decimals":18,"price":2120.58,"updated_at":"2026-03-13T17:36:05.000+00:00","chainId":"1","logoURI":"https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628","coingeckoId":"ethereum"},"stETH":{"address":"0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84","name":"Liquid staked Ether 2.0","symbol":"stETH","decimals":18,"price":2118.805038490422,"updated_at":"2026-03-13T17:36:02.000+00:00","chainId":"1","logoURI":"https://coin-images.coingecko.com/coins/images/13442/large/steth_logo.png?1696513206","coingeckoId":"staked-ether","netStakingApr":4.671254105103406,"grossStakingApr":5.190282339003784},"decimals":"18","exchangePriceiETHV2":"1.203414761211141","userBalance":"0","userBalanceStETH":"0","totalStEthBal":"812419.327201629067773713","wethDebtAmt":"738244.763325903279973481","userSupplyAmount":"0","userSupplyAmountStETH":"0","vaultTVLInAsset":"74184.681698198090232886","instantWithdraw":"3609.80274342217230253841","instantWithdrawStETH":"3607.141991358897236422","availableWithdraw":"18623.34178658556941636218","availableWithdrawStETH":"18607.75373291586350115278","withdrawalFee":"0.05","revenueFee":"20","aggregatedRiskRatio":"90.8699","maxAggregatedRiskRatio":"92","protocolsInfo":{"aaveV3":{"aaveV3ProtocolId":"2","wstETHSupply":"332783.106616012477495959","weETHSupply":"231548.362538813964058274","stETHSupply":"409072.861704795379928744","eETHSupply":"252430.294378772518198057","wETHBorrow":"604998.001522788165384766","ratio":"91.458","maxRiskRatio":"93","stETHSupplyYield":"4.7830190721977500386953534","eETHSupplyYield":"2.5086657392168038823560660","wETHBorrowYield":"2.3305424405853449950813434","netAssets":"56505.154560779732742035"},"compoundV3":{"protocolId":"3","wstETHSupply":"0.0095839992819128","stETHSupply":"0.011781108881084435","wETHBorrow":"0.005248407991813004","ratio":"44.5493","maxRiskRatio":"88","stETHSupplyYield":"4.7820760292641051552275641","wETHBorrowYield":"2.3939046548979431391665831","netAssets":"0.006532700889271431"},"spark":{"sparkProtocolId":"7","wstETHSupply":"773.648644673162920846","stETHSupply":"951.005801492386204583","wETHBorrow":"0.004794326323133508","ratio":"0.0005","maxRiskRatio":"90.5","stETHSupplyYield":"4.7820760292641051552275641","wETHBorrowYield":"2.0604399148308863578140531","netAssets":"951.001007166063071075"},"fluidNew":{"fluidNewProtocolId":"9","wstETHSupply":"77175.200205861938109099","stETHSupply":"94867.435795893233790372","wETHBorrow":"85634.810177492706753481","ratio":"90.2678","maxRiskRatio":"95","stETHSupplyYield":"4.8672984951775814365566019","wETHBorrowYield":"2.7676059328454111409700224","netAssets":"9232.625618400527036891"},"aaveV3Lido":{"aaveV3LidoProtocolId":"10","wstETHSupply":"0.004686210489222287","stETHSupply":"0.005760513371218555","wETHBorrow":"0.000258354835534198","ratio":"4.4849","maxRiskRatio":"93","stETHSupplyYield":"4.8245213645817210140164190","wETHBorrowYield":"2.3790586150903820653329279","netAssets":"0.005502158535684357"},"fluidDex":{"fluidDexProtocolId":"11","wstETHSupply":"5298.144086065944305341","stETHSupply":"6512.731325367850213836","ethSupply":"11639.268121211130091831","wstETHBorrow":"8480.49923685861386699","stETHBorrow":"10424.634010974649309877","wETHBorrow":"5825.643368612098516015","ratio":"89.5233","maxRiskRatio":"95","stETHSupplyYield":"4.8673515270738507922812765","ethSupplyYield":"2.1732790329863544072218948","stETHBorrowYield":"4.9612347342258007090289934","wETHBorrowYield":"2.7676059328454111409700224","dexYield":"0.3907614896009814664981309","netAssets":"1901.722066992232479775"},"fluidWeETHWstETH":{"fluidWeETHWstETHProtocolId":"12","weETHSupply":"30600.004999999996297216","eETHSupply":"33359.632456252375530723","wstETHBorrow":"25512.892526657543210896","stETHBorrow":"31361.663944946509528632","ratio":"94.0108","maxRiskRatio":"94","eETHSupplyYield":"2.5086657392168038823560660","stETHBorrowYield":"0.1709459462810862334823170","netAssets":"1997.968511305866002091"}},"apy":{"apyWithoutFee":"16.2574145436818512752","apyWithFee":"20.321768179602314094"}}]
+[
+  {
+    "version": "2",
+    "vault": "0xA0D3707c569ff8C87FA923d3823eC5D81c98Be78",
+    "ethWrapperContract": "0x64338FD8e7b1918B4a806A175e26eD152B3d0b7b",
+    "tokenAddress": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "token": {
+      "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      "name": "ETH",
+      "symbol": "ETH",
+      "decimals": 18,
+      "price": 2120.58,
+      "updated_at": "2026-03-13T17:36:05.000+00:00",
+      "chainId": "1",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628",
+      "coingeckoId": "ethereum"
+    },
+    "stETH": {
+      "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+      "name": "Liquid staked Ether 2.0",
+      "symbol": "stETH",
+      "decimals": 18,
+      "price": 2118.805038490422,
+      "updated_at": "2026-03-13T17:36:02.000+00:00",
+      "chainId": "1",
+      "logoURI": "https://coin-images.coingecko.com/coins/images/13442/large/steth_logo.png?1696513206",
+      "coingeckoId": "staked-ether",
+      "netStakingApr": 4.671254105103406,
+      "grossStakingApr": 5.190282339003784
+    },
+    "decimals": "18",
+    "exchangePriceiETHV2": "1.203414761211141",
+    "userBalance": "0",
+    "userBalanceStETH": "0",
+    "totalStEthBal": "812419.327201629067773713",
+    "wethDebtAmt": "738244.763325903279973481",
+    "userSupplyAmount": "0",
+    "userSupplyAmountStETH": "0",
+    "vaultTVLInAsset": "74184.681698198090232886",
+    "instantWithdraw": "3609.80274342217230253841",
+    "instantWithdrawStETH": "3607.141991358897236422",
+    "availableWithdraw": "18623.34178658556941636218",
+    "availableWithdrawStETH": "18607.75373291586350115278",
+    "withdrawalFee": "0.05",
+    "revenueFee": "20",
+    "aggregatedRiskRatio": "90.8699",
+    "maxAggregatedRiskRatio": "92",
+    "protocolsInfo": {
+      "aaveV3": {
+        "aaveV3ProtocolId": "2",
+        "wstETHSupply": "332783.106616012477495959",
+        "weETHSupply": "231548.362538813964058274",
+        "stETHSupply": "409072.861704795379928744",
+        "eETHSupply": "252430.294378772518198057",
+        "wETHBorrow": "604998.001522788165384766",
+        "ratio": "91.458",
+        "maxRiskRatio": "93",
+        "stETHSupplyYield": "4.7830190721977500386953534",
+        "eETHSupplyYield": "2.5086657392168038823560660",
+        "wETHBorrowYield": "2.3305424405853449950813434",
+        "netAssets": "56505.154560779732742035"
+      },
+      "compoundV3": {
+        "protocolId": "3",
+        "wstETHSupply": "0.0095839992819128",
+        "stETHSupply": "0.011781108881084435",
+        "wETHBorrow": "0.005248407991813004",
+        "ratio": "44.5493",
+        "maxRiskRatio": "88",
+        "stETHSupplyYield": "4.7820760292641051552275641",
+        "wETHBorrowYield": "2.3939046548979431391665831",
+        "netAssets": "0.006532700889271431"
+      },
+      "spark": {
+        "sparkProtocolId": "7",
+        "wstETHSupply": "773.648644673162920846",
+        "stETHSupply": "951.005801492386204583",
+        "wETHBorrow": "0.004794326323133508",
+        "ratio": "0.0005",
+        "maxRiskRatio": "90.5",
+        "stETHSupplyYield": "4.7820760292641051552275641",
+        "wETHBorrowYield": "2.0604399148308863578140531",
+        "netAssets": "951.001007166063071075"
+      },
+      "fluidNew": {
+        "fluidNewProtocolId": "9",
+        "wstETHSupply": "77175.200205861938109099",
+        "stETHSupply": "94867.435795893233790372",
+        "wETHBorrow": "85634.810177492706753481",
+        "ratio": "90.2678",
+        "maxRiskRatio": "95",
+        "stETHSupplyYield": "4.8672984951775814365566019",
+        "wETHBorrowYield": "2.7676059328454111409700224",
+        "netAssets": "9232.625618400527036891"
+      },
+      "aaveV3Lido": {
+        "aaveV3LidoProtocolId": "10",
+        "wstETHSupply": "0.004686210489222287",
+        "stETHSupply": "0.005760513371218555",
+        "wETHBorrow": "0.000258354835534198",
+        "ratio": "4.4849",
+        "maxRiskRatio": "93",
+        "stETHSupplyYield": "4.8245213645817210140164190",
+        "wETHBorrowYield": "2.3790586150903820653329279",
+        "netAssets": "0.005502158535684357"
+      },
+      "fluidDex": {
+        "fluidDexProtocolId": "11",
+        "wstETHSupply": "5298.144086065944305341",
+        "stETHSupply": "6512.731325367850213836",
+        "ethSupply": "11639.268121211130091831",
+        "wstETHBorrow": "8480.49923685861386699",
+        "stETHBorrow": "10424.634010974649309877",
+        "wETHBorrow": "5825.643368612098516015",
+        "ratio": "89.5233",
+        "maxRiskRatio": "95",
+        "stETHSupplyYield": "4.8673515270738507922812765",
+        "ethSupplyYield": "2.1732790329863544072218948",
+        "stETHBorrowYield": "4.9612347342258007090289934",
+        "wETHBorrowYield": "2.7676059328454111409700224",
+        "dexYield": "0.3907614896009814664981309",
+        "netAssets": "1901.722066992232479775"
+      },
+      "fluidWeETHWstETH": {
+        "fluidWeETHWstETHProtocolId": "12",
+        "weETHSupply": "30600.004999999996297216",
+        "eETHSupply": "33359.632456252375530723",
+        "wstETHBorrow": "25512.892526657543210896",
+        "stETHBorrow": "31361.663944946509528632",
+        "ratio": "94.0108",
+        "maxRiskRatio": "94",
+        "eETHSupplyYield": "2.5086657392168038823560660",
+        "stETHBorrowYield": "0.1709459462810862334823170",
+        "netAssets": "1997.968511305866002091"
+      }
+    },
+    "apy": {
+      "apyWithoutFee": "16.2574145436818512752",
+      "apyWithFee": "20.321768179602314094"
+    }
+  },
+  {
+    "date": "2026-03-13T17:51:53Z",
+    "net_apy": 20.322713013369736558,
+    "gross_apy": 16.2581704106957892464
+  }
+]
