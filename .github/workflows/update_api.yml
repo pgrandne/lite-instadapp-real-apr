@@ -15,9 +15,26 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch API Data
+      - name: Fetch and Append Data
         run: |
-          curl "https://api.instadapp.io/v2/mainnet/lite/users/0x56e001745f105e34afe45398d7bc366db8fc5792/vaults" -o data.json
+          # 1. GET APY from API
+          API_RES=$(curl -s "https://api.instadapp.io/v2/mainnet/lite/users/0x56e001745f105e34afe45398d7bc366db8fc5792/vaults" | jq '.[0].apy')
+          
+          NET_APY=$(echo $API_RES | jq '.apyWithFee | tonumber')
+          GROSS_APY=$(echo $API_RES | jq '.apyWithoutFee | tonumber')
+          
+          # 2. Création de la nouvelle entrée avec Date, APY avec frais et APY sans frais
+          NEW_ENTRY=$(jq -n \
+            --arg date "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+            --arg net_apy "$NET_APY" \
+            --arg gross_apy "$GROSS_APY" \
+            '{date: $date, net_apy: ($net_apy | tonumber), gross_apy: ($brut | tonumber)}')
+
+          # 3. Initialisation du fichier si inexistant
+          if [ ! -f data.json ]; then echo "[]" > data.json; fi
+
+          # 4. Ajout au tableau historique
+          cat data.json | jq ". += [$NEW_ENTRY]" > temp.json && mv temp.json data.json
 
       - name: Commit and Push
         run: |
