@@ -15,26 +15,34 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch and Append Data
+  - name: Fetch and Append Data
         run: |
-          # 1. GET APY from API
-          API_RES=$(curl -s "https://api.instadapp.io/v2/mainnet/lite/users/0x56e001745f105e34afe45398d7bc366db8fc5792/vaults" | jq '.[0].apy')
+          # 1. On récupère la réponse complète
+          FULL_RES=$(curl -s "https://api.instadapp.io/v2/mainnet/lite/users/0x56e001745f105e34afe45398d7bc366db8fc5792/vaults")
           
-          NET_APY=$(echo $API_RES | jq '.apyWithFee | tonumber')
-          GROSS_APY=$(echo $API_RES | jq '.apyWithoutFee | tonumber')
+          # On vérifie si la réponse est bien un JSON valide et contient des données
+          if [ -z "$FULL_RES" ] || [ "$FULL_RES" == "null" ]; then
+            echo "Erreur: L'API a renvoyé une réponse vide"
+            exit 1
+          fi
+
+          # Extraction des valeurs avec des variables bien protégées par des guillemets
+          NET_APY=$(echo "$FULL_RES" | jq '.[0].apy.apyWithFee // 0 | tonumber')
+          GROSS_APY=$(echo "$FULL_RES" | jq '.[0].apy.apyWithoutFee // 0 | tonumber')
           
-          # 2. Création de la nouvelle entrée avec Date, APY avec frais et APY sans frais
+          # 2. Création de la nouvelle entrée
+          # Note l'utilisation de quotes autour des variables shell
           NEW_ENTRY=$(jq -n \
             --arg date "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-            --arg net_apy "$NET_APY" \
-            --arg gross_apy "$GROSS_APY" \
-            '{date: $date, net_apy: ($net_apy | tonumber), gross_apy: ($gross_apy | tonumber)}')
+            --argjson net "$NET_APY" \
+            --argjson gross "$GROSS_APY" \
+            '{date: $date, net_apy: $net, gross_apy: $gross}')
 
           # 3. Initialisation du fichier si inexistant
-          if [ ! -f data.json ]; then echo "[]" > data.json; fi
+          if [ ! -f data.json ] || [ ! -s data.json ]; then echo "[]" > data.json; fi
 
           # 4. Ajout au tableau historique
-          cat data.json | jq ". += [$NEW_ENTRY]" > temp.json && mv temp.json data.json
+          jq ". += [$NEW_ENTRY]" data.json > temp.json && mv temp.json data.json
 
       - name: Commit and Push
         run: |
