@@ -1,6 +1,12 @@
 "use client";
 
+import { AverageTable } from "@/components/AverageTable";
 import { ChartAreaInteractive } from "@/components/ChartAreaInteractive";
+import {
+  ExportDistributedInterest,
+  ExportFluidDailyAPR,
+} from "@/components/ExportFluid";
+import { Header } from "@/components/Header";
 import { SearchInput } from "@/components/SearchInput";
 import { Transaction } from "@/types/interface";
 import { GithubIcon } from "lucide-react";
@@ -11,8 +17,9 @@ export default function Page() {
   const [userDeposit, setUserDeposit] = useState(0);
 
   return (
-    <div className="w-screen h-screen p-6">
-      <div className="w-full h-full flex flex-col gap-4 justify-center items-center">
+    <div className="flex min-h-screen w-full flex-col p-6">
+      <Header />
+      <div className="flex w-full flex-1 flex-col items-center justify-center gap-14">
         <SearchInput
           setProfitsAction={setProfitsAction}
           setUserDeposit={setUserDeposit}
@@ -21,6 +28,19 @@ export default function Page() {
           profitsAction={profitsAction}
           userDeposit={userDeposit}
         />
+        <div className="flex w-full items-center justify-evenly">
+          <div className="w-full max-w-130">
+            <AverageTable />
+          </div>
+          <div className="w-full max-w-65">
+            <div className="flex flex-col space-y-4">
+              <ExportFluidDailyAPR />
+              {profitsAction.length > 0 && (
+                <ExportDistributedInterest profitsAction={profitsAction} />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
       <footer className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
         <a
