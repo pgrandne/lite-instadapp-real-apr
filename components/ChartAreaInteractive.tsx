@@ -31,11 +31,11 @@ import { groupByDay } from "@/lib/utils";
 
 const chartConfig = {
   fluid_APR: {
-    label: "Fluid displayed APR",
+    label: "APR displayed by Fluid",
     color: "var(--chart-1)",
   },
   real_APR: {
-    label: "Real APR calculated",
+    label: "APR calculated (actual)",
     color: "var(--chart-2)",
   },
 } satisfies ChartConfig;
