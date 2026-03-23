@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Transaction } from "@/types/interface";
+import { ChartProps } from "@/types/interface";
 import fluidData from "@/data.json";
 import { groupByDay } from "@/lib/utils";
 
@@ -39,11 +39,6 @@ const chartConfig = {
     color: "var(--chart-2)",
   },
 } satisfies ChartConfig;
-
-type ChartProps = {
-  readonly profitsAction: Transaction[];
-  readonly userDeposit: number;
-};
 
 const CustomLabel = ({
   x,
@@ -94,11 +89,12 @@ export function ChartAreaInteractive({
       daysToSubtract = 7;
     } else if (timeRange === "30d") {
       daysToSubtract = 30;
-    } else if (timeRange === "180d") {
-      daysToSubtract = 180;
-    } else if (timeRange === "365d") {
-      daysToSubtract = 365;
     }
+    // } else if (timeRange === "180d") {
+    //   daysToSubtract = 180;
+    // } else if (timeRange === "365d") {
+    //   daysToSubtract = 365;
+    // }
     const startDate = new Date(referenceDate);
     startDate.setDate(startDate.getDate() - daysToSubtract);
     return date >= startDate;
@@ -122,12 +118,12 @@ export function ChartAreaInteractive({
             <SelectValue placeholder="Last 3 months" />
           </SelectTrigger>
           <SelectContent className="rounded-xl">
-            <SelectItem value="365d" className="rounded-lg">
+            {/* <SelectItem value="365d" className="rounded-lg">
               Last 1 year
             </SelectItem>
             <SelectItem value="180d" className="rounded-lg">
               Last 6 months
-            </SelectItem>
+            </SelectItem> */}
             <SelectItem value="90d" className="rounded-lg">
               Last 3 months
             </SelectItem>

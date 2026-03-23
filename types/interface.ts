@@ -12,6 +12,11 @@ export interface Transaction {
   amount: string;
   amount_in_usd: string;
   metadata: object;
-  created_at: Date;
-  updated_at: Date;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ChartProps {
+  readonly profitsAction: Transaction[];
+  readonly userDeposit: number;
 }
