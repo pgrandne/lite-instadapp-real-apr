@@ -42,7 +42,7 @@ export const Header = () => {
           </HoverCardTrigger>
           <HoverCardContent className="flex w-64 flex-col gap-0.5">
             <div>
-              The actual APR is calcualted from daily distributed interest of
+              The actual APR is calculated from daily distributed interest of
               Fluid
             </div>
           </HoverCardContent>
