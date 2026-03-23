@@ -30,7 +30,10 @@ export default function Page() {
         />
         <div className="flex w-full items-center justify-evenly">
           <div className="w-full max-w-130">
-            <AverageTable />
+            <AverageTable
+              profitsAction={profitsAction}
+              userDeposit={userDeposit}
+            />
           </div>
           <div className="w-full max-w-65">
             <div className="flex flex-col space-y-4">
