@@ -106,8 +106,8 @@ export function ChartAreaInteractive({
         <div className="grid flex-1 gap-1">
           <CardTitle>Daily APR (Annual Percentage Rate)</CardTitle>
           <CardDescription>
-            Comparing Fluid displayed APR and real APR calculated on distributed
-            interest
+            Comparing Fluid’s displayed APR with the real APR calculated from
+            the interest actually distributed by Fluid interest
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
