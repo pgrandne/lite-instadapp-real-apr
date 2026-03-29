@@ -1,5 +1,6 @@
 type TransactionsResponse = {
   deposit: number;
+  ethUsd: number | null;
   transactions: unknown[];
 };
 
@@ -54,8 +55,24 @@ export async function POST(req: Request) {
 
     const result = await res2.json();
 
+    const priceRes = await fetch(
+      "https://api.kraken.com/0/public/Ticker?pair=ethusd",
+    );
+
+    const priceData = priceRes.ok ? await priceRes.json() : null;
+    const priceResult = priceData?.result;
+    const priceKey =
+      priceResult && typeof priceResult === "object"
+        ? Object.keys(priceResult)[0]
+        : null;
+    const ethUsdRaw = priceKey ? priceResult?.[priceKey]?.c?.[0] : null;
+    const ethUsd = Number.isFinite(Number.parseFloat(ethUsdRaw))
+      ? Number.parseFloat(ethUsdRaw)
+      : null;
+
     const payload: TransactionsResponse = {
       deposit,
+      ethUsd,
       transactions: result?.data ?? [],
     };
 

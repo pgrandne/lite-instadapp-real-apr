@@ -11,11 +11,13 @@ type SearchInputProps = {
     React.SetStateAction<Transaction[]>
   >;
   readonly setUserDeposit: React.Dispatch<React.SetStateAction<number>>;
+  readonly setEthValue: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export function SearchInput({
   setProfitsAction,
   setUserDeposit,
+  setEthValue,
 }: SearchInputProps) {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
@@ -38,6 +40,7 @@ export function SearchInput({
 
       setUserDeposit(Number(result?.deposit ?? 0));
       setProfitsAction(result?.transactions ?? []);
+      setEthValue(result?.ethUsd ?? 0);
     } catch (err) {
       console.error(err);
       setProfitsAction([]);
